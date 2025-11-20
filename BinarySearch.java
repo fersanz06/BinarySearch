@@ -10,16 +10,19 @@ public class BinarySearch {
         int inicio = 0;
         int fin = arr.length - 1;
 
+
         while (inicio <= fin) {
             int medio = (inicio + fin) / 2;
 
             if (arr[medio] == objetivo) {
+                return medio;
             }
 
             if (arr[medio] < objetivo) {
                 inicio = medio + 1;
             } else {
-                fin = medio - 1;
+                // ERROR SUTÍL: debería ser `fin = medio - 1`
+                fin = medio;
             }
         }
         return -1;
