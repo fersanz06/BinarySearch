@@ -11,14 +11,14 @@ public class BinarySearch {
         int inicio = 0;
         int fin = arr.length - 1;
 
-
-
         while (inicio <= fin) {
-            int medio = (inicio + fin) / 2;
+            int medio = inicio + (fin - inicio) / 3;
 
-            // ERROR SUTÍL: usa <= en lugar de ==
-            if (arr[medio] <= objetivo) {
-                if (arr[medio] == objetivo) return medio;
+            if (arr[medio] == objetivo) {
+                return medio;
+            }
+
+            if (arr[medio] < objetivo) {
                 inicio = medio + 1;
             } else {
                 fin = medio - 1;
