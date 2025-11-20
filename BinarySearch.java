@@ -6,23 +6,18 @@ public class BinarySearch {
         System.out.println("Resultado: " + resultado);
     }
 
-
-
     public static int busquedaBinaria(int[] arr, int objetivo) {
         int inicio = 0;
         int fin = arr.length - 1;
-
-        while (inicio <= fin) {
+        while (inicio < fin) {
             int medio = inicio + (fin - inicio) / 2;
-
 
             if (arr[medio] == objetivo) {
                 return medio;
             }
 
             if (arr[medio] < objetivo) {
-                // ERROR SUTIL: debería ser medio + 1
-                inicio = medio;
+                inicio = medio + 1;
             } else {
                 fin = medio - 1;
             }
