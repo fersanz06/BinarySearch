@@ -1,0 +1,2 @@
+Número buscado: 20
+Encontrado en el índice: 6
